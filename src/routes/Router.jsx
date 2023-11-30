@@ -16,7 +16,6 @@ const Router = () => {
             <Route path="/meus-pedidos" element={<MeusPedidos />} />
             <Route path="*" element={<ErrorPage />} />
           </Route>
-          
         </Routes>
       </BrowserRouter>
     </>

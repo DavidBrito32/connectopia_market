@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/header/";
 import { styled } from "styled-components";
-import Footer from "../../components/footer";
+import Footer from "../components/footer";
 
 const Public_layout = () => {
   return (

@@ -3,7 +3,7 @@ import Header from "../components/header";
 import { styled } from "styled-components";
 import Footer from "../components/footer";
 
-const Public_layout = () => {
+const Publiclayout = () => {
   return (
     <>
       <CotainerLayout>
@@ -22,4 +22,4 @@ const CotainerLayout = styled.div`
   background-color: #1f1f1f;
 `;
 
-export default Public_layout;
+export default Publiclayout;

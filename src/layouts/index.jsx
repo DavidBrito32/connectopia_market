@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import Header from "../components/header";
 import Footer from "../components/footer";
 
-const Publiclayout = () => {
+export const Publiclayout = () => {
   return (
     <>
       <CotainerLayout>
@@ -15,11 +15,9 @@ const Publiclayout = () => {
   );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 const CotainerLayout = styled.div`
   overflow-x: hidden;
   min-height: 100vh;
   background-color: #1f1f1f;
 `;
 
-export default Publiclayout;

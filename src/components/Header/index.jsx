@@ -1,10 +1,10 @@
+import { useState } from "react";
 import styled from "styled-components";
 import user from "./assets/user.png";
 import conn from "./assets/logo.svg";
 import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import CardCart from "./Card-Cart-items";
-import { useState } from "react";
 
 const Header = () => {
   const [toogle, setToogle] = useState({

@@ -1,15 +1,27 @@
+import { useState } from "react";
 import img from "./assets/rtx 4090.svg";
-import { CiHeart } from "react-icons/ci";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { FiShoppingBag } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 import { styled } from "styled-components";
 
 const CardProdutos = () => {
+  const [collection, setCollection] = useState({
+    like: false,
+  });
+
+  const like = () => setCollection({ ...collection, like: !collection.like });
+
   return (
     <Li>
       <div className="img">
-        <CiHeart title="favoritar" className="coracao" />
+        {collection.like ? (
+          <FaHeart onClick={like} title="favoritar" className="coracao" />
+        ) : (
+          <FaRegHeart onClick={like} title="favoritar" className="coracao" />
+        )}
+
         <img src={img} alt="" />
       </div>
       <h4>Hardware</h4>
@@ -43,7 +55,7 @@ const Li = styled.li`
   padding: 0 10px;
   transition-duration: 200ms;
 
-  &:hover{
+  &:hover {
     scale: 1.03;
     box-shadow: 1px 1px 20px -10px white;
   }

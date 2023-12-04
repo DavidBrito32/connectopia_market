@@ -4,6 +4,7 @@ import HomePage from "../pages/public/home";
 import ErrorPage from "../pages/Error";
 import Products from "../pages/public/products";
 import MeusPedidos from "../pages/public/meus-pedidos";
+import LoginPage from "../pages/auth/login";
 
 const Router = () => {
   return (
@@ -16,6 +17,7 @@ const Router = () => {
             <Route path="/meus-pedidos" element={<MeusPedidos />} />
             <Route path="*" element={<ErrorPage />} />
           </Route>
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
     </>

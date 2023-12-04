@@ -1,4 +1,5 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
+import { Link } from "react-router-dom";
 import BannerRodape from "../../../components/banner-rodape";
 import CardProdutos from "../../../components/card-produto";
 import Carrousel from "../../../components/carrousel";
@@ -19,7 +20,7 @@ const HomePage = () => {
           <CardProdutos />
           <CardProdutos />
           <CardProdutos />
-          <h3 id="all">Ver todos os produtos &#10140;</h3>
+          <Link to={"/products"} id="all">Ver todos os produtos &#10140;</Link>
         </ul>
         <BannerRodape />
       </ContainerHome>

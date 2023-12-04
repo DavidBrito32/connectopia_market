@@ -5,6 +5,7 @@ import conn from "./assets/logo.svg";
 import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import CardCart from "./Card-Cart-items";
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [toogle, setToogle] = useState({
@@ -12,6 +13,8 @@ const Header = () => {
     burguer: false,
     profile: false,
   });
+
+  const navigate = useNavigate();
 
   const toogleCart = () =>
     setToogle({
@@ -91,7 +94,7 @@ const Header = () => {
               <h3>Bem vindo</h3>
               <h4>Entre ou cadastre-se</h4>
               <span>
-                <button>Entrar</button> - <button>cadastre-se</button>
+                <button onClick={() => navigate("/login")}>Entrar</button> - <button>cadastre-se</button>
               </span>
             </div>
           </div>
@@ -123,12 +126,16 @@ const ContainerHeader = styled.header`
     align-items: center;
     & a {
       color: white;
+      transition-duration: 400ms;
+      text-decoration: underline;
+      text-decoration-color: transparent;
       &:hover {
         color: yellow;
       }
       &.active {
         color: yellow;
-        text-decoration: underline !important;
+        transition-duration: 400ms;
+        text-decoration: underline;
         text-underline-offset: 10px;
       }
     }
@@ -151,11 +158,6 @@ const ContainerHeader = styled.header`
       height: 3px;
       background-color: white;
       transition-duration: 400ms;
-    }
-
-    &:hover {
-      height: 25px;
-      scale: 1.1;
     }
 
     &:active {

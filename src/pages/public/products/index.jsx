@@ -37,35 +37,35 @@ const Products = () => {
         <div className="hr"></div>
 
         <ul>
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
-            <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
+          <CardProdutos />
         </ul>
       </ContainerProducts>
     </>
@@ -124,7 +124,7 @@ const ContainerProducts = styled.div`
     }
   }
 
-  & .hr{
+  & .hr {
     width: 100%;
     margin-top: 50px;
     height: 4px;
@@ -132,7 +132,7 @@ const ContainerProducts = styled.div`
     background-color: white;
   }
 
-  & ul{
+  & ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

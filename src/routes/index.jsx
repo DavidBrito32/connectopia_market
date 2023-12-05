@@ -5,6 +5,7 @@ import ErrorPage from "../pages/Error";
 import Products from "../pages/public/products";
 import MeusPedidos from "../pages/public/meus-pedidos";
 import LoginPage from "../pages/auth/login";
+import CadastroPage from "../pages/auth/cadastro";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
             <Route path="*" element={<ErrorPage />} />
           </Route>
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/cadastro" element={<CadastroPage />} />
         </Routes>
       </BrowserRouter>
     </>

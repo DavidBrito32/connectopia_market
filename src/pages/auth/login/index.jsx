@@ -59,7 +59,7 @@ const LoginPage = () => {
           </div>
 
           <h4>
-            Não possui cadastro? <Link>Crie sua conta agora mesmo</Link>
+            Não possui cadastro? <Link to={"/cadastro"}>Crie sua conta agora mesmo</Link>
           </h4>
 
           <button>Entrar</button>

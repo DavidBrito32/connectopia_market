@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import user from "./assets/user.png";
 import conn from "./assets/logo.svg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import CardCart from "./Card-Cart-items";
 import { useNavigate } from 'react-router-dom';
@@ -82,7 +82,8 @@ const Header = () => {
               <h3>
                 TOTAL DO CARRINHO: <span>{`R$: 3.500,00`}</span>
               </h3>
-
+              <Link onClick={toogleCart} to={"/meus-pedidos"}>Ir para o carrinho</Link>
+                <h4>Ou</h4>
               <button>Prosseguir ao pagamento</button>
             </div>
           </div>
@@ -94,7 +95,7 @@ const Header = () => {
               <h3>Bem vindo</h3>
               <h4>Entre ou cadastre-se</h4>
               <span>
-                <button onClick={() => navigate("/login")}>Entrar</button> - <button>cadastre-se</button>
+                <button onClick={() => navigate("/login")}>Entrar</button> - <button onClick={() => navigate("/cadastro")}>cadastre-se</button>
               </span>
             </div>
           </div>
@@ -232,7 +233,7 @@ const ContainerHeader = styled.header`
         display: flex;
         flex-direction: column;
         gap: 5px;
-        width: 300px;
+        width: 350px;
         height: 0px;
         visibility: hidden;
         opacity: 0;
@@ -248,7 +249,7 @@ const ContainerHeader = styled.header`
         transition-duration: 400ms;
 
         &.active {
-          height: 400px;
+          height: 450px;
           visibility: visible;
           opacity: 1;
         }
@@ -274,10 +275,26 @@ const ContainerHeader = styled.header`
         }
 
         & h3 {
-          font-size: 12px;
+          font-size: 14px;
           font-weight: bold;
           display: flex;
           justify-content: space-between;
+        }
+
+        & h4{
+          text-align: center;
+        }
+
+        & a{
+          width: 100%;
+          padding: 10px 15px;
+          border: 2px solid #00ff0d;
+          color: white;
+          text-align: center;
+          border-radius: 8px;
+            &:hover{
+              background-color: #FFFFFF25;
+            }
         }
 
         & button {

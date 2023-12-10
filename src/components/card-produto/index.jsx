@@ -13,6 +13,7 @@ const CardProdutos = () => {
 
   const like = () => setCollection({ ...collection, like: !collection.like });
 
+
   return (
     <Li>
       <div className="img">
@@ -34,7 +35,7 @@ const CardProdutos = () => {
         <h3>
           R$: 2.560,00 <span>R$: 3.230,00</span>
         </h3>
-        <Link>Ver mais &#10140;</Link>
+        <Link to={"/products-details"}>Ver mais &#10140;</Link>
       </div>
       <div className="actions">
         <button>Comprar Agora</button>

@@ -144,6 +144,27 @@ const Container = styled.li`
       }
     }
   }
+
+
+  @media only screen and (max-width: 768px){
+    & img{
+      width: 150px;
+    }
+
+    & .product{
+      & h2{
+        font-size: 14px;
+      }
+
+      & h3{
+        font-size: 12px;
+      }
+    }
+
+    & .reviews{
+      display: none;
+    }
+  }
 `;
 
 export default ProductsInCart;

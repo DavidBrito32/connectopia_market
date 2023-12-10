@@ -27,7 +27,7 @@ const MeusPedidos = () => {
             <h3>Valor dos produtos <span>R$: 3.500,00</span></h3>
             <h3>Frete: <span>R$: 0,00</span></h3>
             <h3>Total a prazo: <span>R$: 3.850,00</span></h3>
-            <h3>(em ate 10x de 473,68 sem juros)</h3>
+            <h3 className="discount">(em ate 10x de 473,68 sem juros)</h3>
             <button>Prosseguir para o pagamento</button>
             <button onClick={() => navigate("/products")}>Continuar comprando</button>
         </div>
@@ -80,6 +80,9 @@ const ContainerPedidos = styled.div`
             justify-content: space-between;
             font-size: 18px;
             color: white;
+              &.discount{
+                color: #fb3030;
+              }
         }
 
         & button{
@@ -100,6 +103,23 @@ const ContainerPedidos = styled.div`
                     scale: .97;
                 }
         }
+  }
+
+
+  @media only screen and (max-width: 768px){
+    flex-direction: column;
+    padding: 50px 10px;
+    flex-wrap: nowrap;
+    height: fit-content;
+    gap: 40px;
+
+      & ul{
+        width: 100%;
+      }
+
+      & .comprar{
+        width: 100%;
+      }
   }
 `;
 

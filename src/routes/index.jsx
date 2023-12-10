@@ -7,6 +7,7 @@ import Products from "../pages/public/products";
 import MeusPedidos from "../pages/public/meus-pedidos";
 import LoginPage from "../pages/auth/login";
 import CadastroPage from "../pages/auth/cadastro";
+import ProductDetails from "../pages/public/productDetails";
 
 const Router = () => {
   const location = useLocation();
@@ -17,6 +18,7 @@ const Router = () => {
           <Route path="/" element={<Publiclayout />}>
             <Route index element={<HomePage />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products-details" element={<ProductDetails />} />
             <Route path="/meus-pedidos" element={<MeusPedidos />} />
             <Route path="*" element={<ErrorPage />} />
           </Route>

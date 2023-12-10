@@ -4,26 +4,35 @@ import BannerRodape from "../../../components/banner-rodape";
 import CardProdutos from "../../../components/card-produto";
 import Carrousel from "../../../components/carrousel";
 import { styled } from "styled-components";
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   return (
     <>
-      <ContainerHome>
-        <Carrousel />
-        <ul>
-          <h1>Perifericos Ecohidos a dedo</h1>
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <Link to={"/products"} id="all">Ver todos os produtos &#10140;</Link>
-        </ul>
-        <BannerRodape />
-      </ContainerHome>
+      <motion.div
+      initial={{opacity: 0}}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      >
+        <ContainerHome>
+          <Carrousel />
+          <ul>
+            <h1>Perifericos Ecohidos a dedo</h1>
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <Link to={"/products"} id="all">
+              Ver todos os produtos &#10140;
+            </Link>
+          </ul>
+          <BannerRodape />
+        </ContainerHome>
+      </motion.div>
     </>
   );
 };

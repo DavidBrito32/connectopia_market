@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Publiclayout from "../layouts/";
 import HomePage from "../pages/public/home";
 import ErrorPage from "../pages/Error";
@@ -8,10 +9,11 @@ import LoginPage from "../pages/auth/login";
 import CadastroPage from "../pages/auth/cadastro";
 
 const Router = () => {
+  const location = useLocation();
   return (
     <>
-      <BrowserRouter>
-        <Routes>
+      <AnimatePresence mode="wait">
+        <Routes key={location.pathname} location={location}>
           <Route path="/" element={<Publiclayout />}>
             <Route index element={<HomePage />} />
             <Route path="/products" element={<Products />} />
@@ -21,7 +23,7 @@ const Router = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/cadastro" element={<CadastroPage />} />
         </Routes>
-      </BrowserRouter>
+      </AnimatePresence>
     </>
   );
 };

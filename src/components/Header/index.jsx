@@ -6,6 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import CardCart from "./Card-Cart-items";
 import { useNavigate } from 'react-router-dom';
+import { FaHeart } from 'react-icons/fa';
 
 const Header = () => {
   const [toogle, setToogle] = useState({
@@ -69,6 +70,7 @@ const Header = () => {
 
           <div className="cart-container">
             <span className="icon-cart">
+              {/* <FaHeart className="cart" /> */}
               <AiOutlineShoppingCart onClick={toogleCart} className="cart" />
               <span>1</span>
             </span>

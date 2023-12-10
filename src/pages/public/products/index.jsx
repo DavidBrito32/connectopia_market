@@ -1,73 +1,80 @@
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import CardProdutos from "../../../components/card-produto";
+import { motion } from "framer-motion";
 const Products = () => {
   return (
     <>
-      <ContainerProducts>
-        <div className="menu">
-          <div className="selects">
-            <select name="brandSelect" id="">
-              <option value="" defaultChecked>
-                Selecionar por marca
-              </option>
-              <optgroup label="Especiais">
-                <option value="Nike">Nike</option>
-                <option value="Maresia">Maresia</option>
-                <option value="East Coast">East Coast</option>
-                <option value="Lacoste">Lacoste</option>
-              </optgroup>
-              <optgroup label="Comuns">
-                <option value="Renner">Renner</option>
-                <option value="Marisa">Marisa</option>
-                <option value="C&A">C & A</option>
-                <option value="Baratão">Baratão</option>
-              </optgroup>
-            </select>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <ContainerProducts>
+          <div className="menu">
+            <div className="selects">
+              <select name="brandSelect" id="">
+                <option value="" defaultChecked>
+                  Selecionar por marca
+                </option>
+                <optgroup label="Especiais">
+                  <option value="Nike">Nike</option>
+                  <option value="Maresia">Maresia</option>
+                  <option value="East Coast">East Coast</option>
+                  <option value="Lacoste">Lacoste</option>
+                </optgroup>
+                <optgroup label="Comuns">
+                  <option value="Renner">Renner</option>
+                  <option value="Marisa">Marisa</option>
+                  <option value="C&A">C & A</option>
+                  <option value="Baratão">Baratão</option>
+                </optgroup>
+              </select>
 
-            <select name="price" id="price">
-              <option value="maior">Do menor para o maior</option>
-              <option value="menor">Do maior para o menor</option>
-            </select>
+              <select name="price" id="price">
+                <option value="maior">Do menor para o maior</option>
+                <option value="menor">Do maior para o menor</option>
+              </select>
+            </div>
+
+            <Link>Ver mais produtos ➡️</Link>
           </div>
 
-          <Link>Ver mais produtos ➡️</Link>
-        </div>
+          <div className="hr"></div>
 
-        <div className="hr"></div>
-
-        <ul>
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-          <CardProdutos />
-        </ul>
-      </ContainerProducts>
+          <ul>
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+          </ul>
+        </ContainerProducts>
+      </motion.div>
     </>
   );
 };

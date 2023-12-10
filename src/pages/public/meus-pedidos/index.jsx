@@ -1,9 +1,17 @@
 import { styled } from "styled-components";
 import ProductsInCart from "./products-incart";
 import CardEndereco from './cardEndereco/index';
+import { useNavigate } from 'react-router-dom';
+import { motion } from "framer-motion"
 const MeusPedidos = () => {
+  const navigate = useNavigate();
   return (
     <>
+    <motion.div
+    initial={{opacity: 0}}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    >
       <ContainerPedidos>
         <ul>
           <h3>Produtos no carrinho:</h3>
@@ -21,9 +29,10 @@ const MeusPedidos = () => {
             <h3>Total a prazo: <span>R$: 3.850,00</span></h3>
             <h3>(em ate 10x de 473,68 sem juros)</h3>
             <button>Prosseguir para o pagamento</button>
-            <button>Continuar comprando</button>
+            <button onClick={() => navigate("/products")}>Continuar comprando</button>
         </div>
       </ContainerPedidos>
+      </motion.div>
     </>
   );
 };

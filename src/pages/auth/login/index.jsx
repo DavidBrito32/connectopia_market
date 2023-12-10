@@ -5,68 +5,101 @@ import { styled } from "styled-components";
 import { FcGoogle } from "react-icons/fc";
 import { FaMeta, FaXTwitter } from "react-icons/fa6";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { useForm } from "./../../../hooks/useForm/index";
+import { motion } from "framer-motion";
 
 const LoginPage = () => {
   const [flags, setFlegs] = useState({
     isLogged: false,
     password: false,
   });
+
+  const { form, handleForm, clearForm } = useForm({
+    email: "",
+    password: "",
+    isLogged: false,
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(form);
+    clearForm();
+  };
+
+  const logged = () => {
+    form.isLogged = !form.isLogged;
+  };
+
   const isLogged = () => setFlegs({ ...flags, isLogged: !flags.isLogged });
   const password = () => setFlegs({ ...flags, password: !flags.password });
   return (
     <>
-      <Login>
-        <form>
-          <h3>Faça Login para aproveitar todas as promoções</h3>
-          <label htmlFor="email" id="email">
-            <span>E-mail:</span>
-            <input
-              type="email"
-              placeholder="Informe seu email de cadastro"
-              required
-            />
-          </label>
-          <label htmlFor="password" id="password">
-            <span>Informe sua senha:</span>
-            <input
-              type={flags.password ? "text" : "password"}
-              placeholder="Informe seu email de cadastro"
-              required
-            />
-            {flags.password ? (
-              <FaRegEyeSlash onClick={password} className="password" />
-            ) : (
-              <FaRegEye onClick={password} className="password" />
-            )}
-          </label>
+      <motion.div
+        initial={{opacity: 0}}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <Login>
+          <form onSubmit={handleSubmit}>
+            <h3>Faça Login para aproveitar todas as promoções</h3>
+            <label htmlFor="email" id="email">
+              <span>E-mail:</span>
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleForm}
+                placeholder="Informe seu email de cadastro"
+                required
+              />
+            </label>
+            <label htmlFor="password" id="password">
+              <span>Informe sua senha:</span>
+              <input
+                name="password"
+                value={form.password}
+                onChange={handleForm}
+                type={flags.password ? "text" : "password"}
+                placeholder="Informe seu email de cadastro"
+                required
+              />
+              {flags.password ? (
+                <FaRegEyeSlash onClick={password} className="password" />
+              ) : (
+                <FaRegEye onClick={password} className="password" />
+              )}
+            </label>
 
-          <div className="logged">
-            <div className="opt">
-              <div className="btn-box" onClick={isLogged}>
-                <div
-                  className={flags.isLogged ? "clicked active" : "clicked"}
-                ></div>
+            <div className="logged">
+              <div className="opt">
+                <div className="btn-box" onClick={isLogged}>
+                  <div
+                    className={flags.isLogged ? "clicked active" : "clicked"}
+                    onClick={logged}
+                  ></div>
+                </div>
+                <span>Permanecer Logado?</span>
               </div>
-              <span>Permanecer Logado?</span>
+              <Link>Esqueceu a senha?</Link>
             </div>
-            <Link>Esqueceu a senha?</Link>
-          </div>
-          <div className="social">
-            <h3>Acessar com:</h3>
-            <FcGoogle className={"social_media"} />
-            <FaMeta className={"social_media"} />
-            <FaXTwitter className={"social_media"} />
-          </div>
+            <div className="social">
+              <h3>Acessar com:</h3>
+              <FcGoogle className={"social_media"} />
+              <FaMeta className={"social_media"} />
+              <FaXTwitter className={"social_media"} />
+            </div>
 
-          <h4>
-            Não possui cadastro? <Link to={"/cadastro"}>Crie sua conta agora mesmo</Link>
-          </h4>
+            <h4>
+              Não possui cadastro?{" "}
+              <Link to={"/cadastro"}>Crie sua conta agora mesmo</Link>
+            </h4>
 
-          <button>Entrar</button>
-        </form>
+            <button disabled>Entrar</button>
+          </form>
 
-        <img src={Logo} alt="" />
-      </Login>
+          <img src={Logo} alt="" />
+        </Login>
+      </motion.div>
     </>
   );
 };
@@ -231,6 +264,13 @@ const Login = styled.div`
       &:active {
         scale: 0.97;
       }
+      &:disabled {
+        background-color: #6e7e72;
+        cursor: default;
+        &:active {
+          scale: none;
+        }
+      }
     }
   }
 
@@ -238,6 +278,35 @@ const Login = styled.div`
     width: 500px;
     height: 500px;
     object-fit: contain;
+  }
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    gap: 10px;
+    padding-bottom: 100px;
+
+    & img {
+      width: 80%;
+    }
+
+    & form {
+      width: 90%;
+      padding: 34px 10px;
+
+      & h3 {
+        font-size: 22px;
+      }
+
+      & .logged {
+        & span {
+          font-size: 14px;
+        }
+
+        & a {
+          font-size: 14px;
+        }
+      }
+    }
   }
 `;
 
